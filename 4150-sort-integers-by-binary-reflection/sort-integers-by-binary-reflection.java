@@ -19,7 +19,7 @@ class Solution {
         
          int[] result = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            result[i] = arr[i];
+            result[i] = arr[i]; 
         }
 
         return result;
