@@ -15,11 +15,11 @@ class Solution {
             return;
         }
 
+         generatesubsets(arr, li, ans, inx+1, n);
         li.add(arr[inx]);
         generatesubsets(arr, li, ans, inx+1, n);
          li.remove(li.size()-1);
 
-         generatesubsets(arr, li, ans, inx+1, n);
 
 
     }
