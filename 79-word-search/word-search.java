@@ -41,8 +41,8 @@ class Solution {
         boolean c = findworddfs(mat, i+1, j, idx+1, str);
         boolean d = findworddfs(mat, i, j-1, idx+1, str);
 
-        mat[i][j] = temp;
-
+    
+        mat[i][j] = temp; 
         return a || b || c || d;
     }
 }
