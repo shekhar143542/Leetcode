@@ -10,9 +10,9 @@ class Solution {
         }
 
         sum = lsum;
-        // if(r+1 == k){
-        //     return lsum;
-        // }
+        if(r+1 == k){
+            return lsum;
+        }
 
         for(int i=k-1;i>=0;i--){
             lsum -= cardPoints[i];
