@@ -1,33 +1,42 @@
+import java.util.*;
+
 class MyQueue {
-    Stack<Integer> inst;
-    Stack<Integer> outst;
+
+    Stack<Integer> st1;
+    Stack<Integer> st2;
+
     public MyQueue() {
-        inst = new Stack<>();
-        outst = new Stack<>();
+        st1 = new Stack<>();
+        st2 = new Stack<>();
     }
     
     public void push(int x) {
-        inst.push(x);
+        st1.push(x);
     }
     
     public int pop() {
-        peek();
-        return outst.pop();
+        moveIfNeeded();
+        return st2.pop();
     }
     
     public int peek() {
-        if(outst.isEmpty()){
-            while(!inst.isEmpty()){
-                outst.push(inst.pop());
-            }
-        }
-        return outst.peek();
+        moveIfNeeded();
+        return st2.peek();
     }
     
     public boolean empty() {
-        return inst.isEmpty() && outst.isEmpty();
+        return st1.isEmpty() && st2.isEmpty();
+    }
+
+    private void moveIfNeeded() {
+        if (st2.isEmpty()) {
+            while (!st1.isEmpty()) {
+                st2.push(st1.pop());
+            }
+        }
     }
 }
+
 
 /**
  * Your MyQueue object will be instantiated and called as such:
